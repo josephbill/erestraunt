@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<title>eRestraunt</title>
+</head>
+<body>
+<!-- navbar -->
+ <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+
+
+           
+            <li role="presentation"><a href="#about ">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      
+      </div>
+
+      <!-- jumbotron -->
+       <div class="jumbotron" id="about">
+        <h1>eRestraunt </h1> 
+        <p class="lead" style="font-family: verdana;">Restraunt ? Subscribe to use the erestraunt service now and get orders from everywhere.. Online :-) </p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+      </div>
+
+
+	<div class="container" ng-controller="AppCtrl">
+		
+			<table class="table">
+			<!-- 	<thead>
+					<tr>
+						<th>Name</th>
+						<th>Secondary School</th>
+						<th>KCPE Marks</th>
+						<th>Amount Needed</th>
+						<th>Action</th>
+						<th>&nbsp</th>
+					</tr>
+				</thead> -->
+				<tbody>
+					<tr>
+						<td><input class="form-control" ng-model="contact.name" placeholder="Name"></td>
+						<td><input class="form-control" ng-model="contact.liscence" placeholder="Liscence Number"></td>
+						<td><input class="form-control"
+						ng-model="contact.location" placeholder = "Location"></td>
+						<td><select class= "form-control"         ng.model="contact.RestrauntCategory" placeholder="Restraunt Category">
+                          <option value="Fast Food">Fast Food</option>
+                          <option value="Swahili Dishes">Swahili dishes</option>
+                          <option value="African Meals">African Meals</option>
+                           <option value="General">General</option>
+
+
+
+						 </select></td>
+						<td><button class="btn btn-primary" ng-click="addContact()">Add Restraunt</button></td>
+						<br> 
+						<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td></td>
+					</tr>
+					<tr ng-repeat="contact in contactList">
+			          <td>{{contact.name}}</td>
+			          <td>{{contact.liscence}}</td>
+			          <td>{{contact.location}}</td>
+			          <td>{{contact.RestrauntCategory}}</td>
+			          
+			          <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+			          <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+					</tr>
+				</tbody> 
+			</table>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
